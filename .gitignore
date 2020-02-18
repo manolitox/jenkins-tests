@@ -1,6 +1,7 @@
 /html/
 /latex/
 /bin/
+/reports/
 
 *.o
 *.swp

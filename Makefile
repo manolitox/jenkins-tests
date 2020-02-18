@@ -2,6 +2,7 @@ dirs:
 	@mkdir -p obj
 	@mkdir -p bin
 	@mkdir -p tests/bin
+	@mkdir -p reports/tests
 
 all: dirs cppcheck bin doc cppcheck
 
@@ -33,9 +34,9 @@ cppcheck:
 	cppcheck --enable=all --inconclusive main.c stack.c armstrong.c
 
 tests: obj/armstrong.o obj/stack.o
-	gcc ./tests/test_is_armstrong_number.c obj/armstrong.o obj/stack.o -lm -lcmocka -o tests/bin/test_is_armstrong_number
+	gcc ./tests/test_is_armstrong_number.c obj/armstrong.o obj/stack.o -lm -lcmocka -o tests/bin/test_is_armstrong_number 
 	CMOCKA_MESSAGE_OUTPUT=stdout CMOCKA_XML_FILE='' ./tests/bin/test_is_armstrong_number
 
 tests-xml: obj/armstrong.o obj/stack.o
-	gcc ./tests/test_is_armstrong_number.c obj/armstrong.o obj/stack.o -lm -lcmocka -o tests/bin/test_is_armstrong_number
-	CMOCKA_XML_FILE=reports/cmocka/%g.xml CMOCKA_MESSAGE_OUTPUT=xml ./tests/bin/test_is_armstrong_number 
+	gcc ./tests/test_is_armstrong_number.c obj/armstrong.o obj/stack.o -lm -lcmocka -o tests/bin/test_is_armstrong_number 
+	CMOCKA_XML_FILE=reports/tests/%g.xml CMOCKA_MESSAGE_OUTPUT=xml ./tests/bin/test_is_armstrong_number 
