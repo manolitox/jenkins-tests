@@ -4,7 +4,7 @@ dirs:
 
 all: dirs bin doc
 
-bin: obj/main.o 
+bin: dirs obj/main.o 
 	gcc obj/main.o -o bin/is_armstrong_number -lm
 
 obj/main.o : main.c
