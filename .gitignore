@@ -6,4 +6,5 @@
 *.swp
 
 is_armstrong_number
+/tests/bin/test_is_armstrong_number
 cppcheck.xml
