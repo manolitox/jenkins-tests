@@ -5,10 +5,10 @@ dirs:
 all: dirs cppcheck bin doc
 
 bin: dirs obj/main.o 
-	gcc obj/main.o -o bin/is_armstrong_number -lm
+	gcc obj/main.o -Wall -o bin/is_armstrong_number -lm
 
 obj/main.o : main.c
-	gcc -c main.c -o obj/main.o
+	gcc -c -pedantic -Wall main.c -o obj/main.o
 
 clean:
 	@rm -fR bin/* obj/* 
