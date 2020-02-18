@@ -2,7 +2,7 @@ dirs:
 	@mkdir -p obj
 	@mkdir -p bin
 
-all: dirs bin doc
+all: dirs cppcheck bin doc
 
 bin: dirs obj/main.o 
 	gcc obj/main.o -o bin/is_armstrong_number -lm
@@ -19,3 +19,5 @@ doc:
 clean-doc:
 	rm -fR html latex
 
+cppcheck:
+	cppcheck --enable=all --inconclusive --xml --xml-version=2 main.c 2> cppcheck.xml

@@ -27,11 +27,11 @@ int pop();
 /**
 * Verifica si un número es de Armstrong o no
 * 
-* @param a Numero a verificar
+* @param numb Numero a verificar
 *
 * @return 0 si es de Armstrong, 1 si no
 **/
-int is_armstrong_number(int a);
+int is_armstrong_number(int numb);
 
 /**
 * Función principal
@@ -46,17 +46,21 @@ void main(){
 }
 
 int is_armstrong_number(int numb){   
-	int j, remainder, temp, count, value;   
+	int temp, count, value;   
 	temp=numb;   
 	count=0;   
-	while(numb >0)   {      
+	while(numb >0)   {
+		int remainder;
+
 		remainder=numb%10;      
 		push(remainder);      
 		count++;      
 		numb=numb/10;   
 	}   numb=temp;   
 	value=0;   
-	while(top >=0)   {      
+	while(top >=0)   { 
+		int j;
+
 		j=pop();      
 		value=value+pow(j,count);   
 	}   
@@ -73,11 +77,12 @@ void push(int m){
 }
 
 int pop(){   
-	int j;   
 	if(top==-1)
 		return(top);   
 	else   
 	{      
+		int j;
+
 		j=stack[top];      
 		top--;      
 		return(j);   
