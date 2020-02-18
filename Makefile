@@ -1,7 +1,21 @@
-is_amstrong_number : main.o 
-	gcc main.o -o is_armstrong_number -lm 
-main.o : main.c
-	gcc -c main.c
+dirs:
+	@mkdir -p obj
+	@mkdir -p bin
+
+all: dirs bin doc
+
+bin: obj/main.o 
+	gcc obj/main.o -o bin/is_armstrong_number -lm
+
+obj/main.o : main.c
+	gcc -c main.c -o obj/main.o
+
 clean:
-	rm main.o is_armstrong_number 
+	@rm -fR bin/* obj/* 
+
+doc:
+	doxygen
+
+clean-doc:
+	rm -fR html latex
 
