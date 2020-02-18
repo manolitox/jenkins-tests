@@ -6,6 +6,7 @@
 #ifndef STACK_INC
 #define STACK_INC
 
+//! Índice del último elemento
 extern int top;
 
 /**

@@ -9,7 +9,6 @@
 //! Número máximo de caracteres
 #define max 10
 
-//! Índice del último elemento
 int top=-1;
 
 //! Pila de datos
