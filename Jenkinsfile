@@ -8,9 +8,24 @@ pipeline {
         }
         stage('Make') { 
             steps {
-                sh label: '', script: 'make all'
+                sh label: '', script: 'make bin'
             }
         }
+        stage('Doc') { 
+           steps {
+                sh label: '', script: 'make doc'
+            }
+        }
+        stage('Check') { 
+           steps {
+                sh label: '', script: 'make cppcheck-xml'
+            }
+        }
+        stage('Tests') { 
+           steps {
+                sh label: '', script: 'make tests-xml'
+            }
+        } 
     }
     post {
     always {
