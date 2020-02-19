@@ -31,7 +31,7 @@ pipeline {
     always {
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'html', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
                 publishCppcheck pattern: 'cppcheck.xml'
-                junit 'reports/tests/is_armstrong_number_tests.xml'
+                //junit 'reports/tests/is_armstrong_number_tests.xml'
 
                 chuckNorris()
         }
