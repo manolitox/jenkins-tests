@@ -10,6 +10,9 @@ pipeline {
             steps {
                 sh label: '', script: 'make bin'
             }
+            post { always {
+                recordIssues qualityGates: [[threshold: 1, type: 'TOTAL', unstable: false]], tools: [gcc()]
+            }}
         }
         stage('Doc') { 
            steps {
