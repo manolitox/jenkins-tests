@@ -31,6 +31,7 @@ pipeline {
     always {
                 chuckNorris()
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'html', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+                publishCppcheck pattern: 'cppcheck.xml'
         }
     }
 }
