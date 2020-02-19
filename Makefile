@@ -19,7 +19,7 @@ obj/armstrong.o : armstrong.c
 	gcc -c -pedantic -Wall armstrong.c -o obj/armstrong.o
 
 clean:
-	@rm -fR bin/* obj/* tests/bin/*
+	@rm -fR bin/* obj/* tests/bin/* reports/tests/*
 
 doc:
 	doxygen
