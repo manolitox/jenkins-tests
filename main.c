@@ -10,7 +10,7 @@
 /**
 * Función principal
 **/
-void main(){   
+int main(){   
 	int n;   
 	printf("Introduce un número entero");   
 	scanf("%d",&n);   
@@ -18,5 +18,5 @@ void main(){
 		printf("%d es un número de armstrong \U0001F60E \n", n);   
 	else printf("%d no es un número de armstrong \U0001F622 \n", n);
 
-	//return(0);
+	return(0);
 }
